@@ -1,6 +1,5 @@
 {
-  "name": "swarm-agent",
-  "description": "Project starter for elizaOS",
+  "name": "swarm-elizaos-agent",
   "version": "0.1.0",
   "type": "module",
   "main": "dist/src/index.js",

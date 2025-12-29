@@ -1,26 +1,33 @@
 # Project Starter
 
-This is the starter template for ElizaOS projects.
+AI agent for Swarm decentralized storage operations. Handles postage stamps, uploads/downloads, feeds via Bee node integration.
 
 ## Features
 
-- Pre-configured project structure for ElizaOS development
-- Comprehensive testing setup with component and e2e tests
-- Default character configuration with plugin integration
-- Example service, action, and provider implementations
-- TypeScript configuration for optimal developer experience
-- Built-in documentation and examples
+- Upload text data to Swarm.
+- Download text data from Swarm.
+- Upload files and folders to Swarm.
+- Download files and folders from Swarm.
+- Update data on a Swarm feed.
+- Read latest data from a Swarm feed.
+- Create postage stamp batches for storage.
+- Get a postage stamp batch.
+- List postage stamp batches.
+- Extend storage and duration of a postage stamp batch.
+
+## Configuration Options
+
+| Option                              | Type    | Required                                     | Description                                                                                                                                                |
+| ----------------------------------- | ------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `BEE_API_URL`                       | string  | **optional** (unless using your own node)    | The URL of the Bee API endpoint. If omitted, the default Swarm Gateway will be used: `https://api.gateway.ethswarm.org`. Example: `http://localhost:1633`. |
+| `BEE_FEED_PK`                       | string  | **optional** (cannot update feed without it) | The private key of the Swarm Feed to use. If not provided, Swarm Feed functionality will be disabled.                                                      |
+| `AUTO_ASSIGN_STAMP`                 | boolean | **optional**                                 | Whether to automatically assign a postage stamp if none is provided. Default value is: true. Set to false to disable automatic stamp assignment.           |
+| `DEFERRED_UPLOAD_SIZE_THRESHOLD_MB` | number  | **optional**                                 | Size threshold in megabytes for deferred uploads. Files larger than this size will be uploaded asynchronously. Default value is: 5 (MB).                   |
+| `OPENAI_API_KEY`                    | string  | **optional**                                 | API key for OpenAi.                                                                                                                                        |
 
 ## Getting Started
 
 ```bash
-# Create a new project
-elizaos create --type project my-project
-# Dependencies are automatically installed and built
-
-# Navigate to the project directory
-cd my-project
-
 # Start development immediately
 elizaos dev
 ```
@@ -45,7 +52,6 @@ elizaos test
 ElizaOS employs a dual testing strategy:
 
 1. **Component Tests** (`src/__tests__/*.test.ts`)
-
    - Run with Bun's native test runner
    - Fast, isolated tests using mocks
    - Perfect for TDD and component logic
@@ -79,15 +85,15 @@ Component tests use bun:test:
 
 ```typescript
 // Unit test example (__tests__/config.test.ts)
-describe('Configuration', () => {
-  it('should load configuration correctly', () => {
+describe("Configuration", () => {
+  it("should load configuration correctly", () => {
     expect(config.debug).toBeDefined();
   });
 });
 
 // Integration test example (__tests__/integration.test.ts)
-describe('Integration: Plugin with Character', () => {
-  it('should initialize character with plugins', async () => {
+describe("Integration: Plugin with Character", () => {
+  it("should initialize character with plugins", async () => {
     // Test interactions between components
   });
 });
@@ -98,10 +104,10 @@ E2E tests use ElizaOS test interface:
 ```typescript
 // E2E test example (e2e/project.test.ts)
 export class ProjectTestSuite implements TestSuite {
-  name = 'project_test_suite';
+  name = "project_test_suite";
   tests = [
     {
-      name: 'project_initialization',
+      name: "project_initialization",
       fn: async (runtime) => {
         // Test project in a real runtime
       },
@@ -120,3 +126,4 @@ Customize your project by modifying:
 
 - `src/index.ts` - Main entry point
 - `src/character.ts` - Character definition
+
