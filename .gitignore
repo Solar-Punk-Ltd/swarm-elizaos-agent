@@ -1,0 +1,25 @@
+# TypeScript output
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Database
+data/
+.elizadb
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Uploads/Downloads (regenerate locally)
+uploads/
+downloads/
+
+# OS
+.DS_Store
+Thumbs.db
