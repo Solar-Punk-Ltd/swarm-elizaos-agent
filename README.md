@@ -24,6 +24,7 @@ AI agent for Swarm decentralized storage operations. Handles postage stamps, upl
 | `AUTO_ASSIGN_STAMP`                 | boolean | **optional**                                 | Whether to automatically assign a postage stamp if none is provided. Default value is: true. Set to false to disable automatic stamp assignment.           |
 | `DEFERRED_UPLOAD_SIZE_THRESHOLD_MB` | number  | **optional**                                 | Size threshold in megabytes for deferred uploads. Files larger than this size will be uploaded asynchronously. Default value is: 5 (MB).                   |
 | `OPENAI_API_KEY`                    | string  | **optional**                                 | API key for OpenAi.                                                                                                                                        |
+| `AVATAR_URL`                        | string  | **optional**                                 | The URL for the agent avatar.                                                                                                                              |
 
 ## Getting Started
 
