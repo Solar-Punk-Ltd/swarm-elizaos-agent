@@ -26,6 +26,16 @@ AI agent for Swarm decentralized storage operations. Handles postage stamps, upl
 | `OPENAI_API_KEY`                    | string  | **optional**                                 | API key for OpenAi.                                                                                                                                        |
 | `AVATAR_URL`                        | string  | **optional**                                 | The URL for the agent avatar.                                                                                                                              |
 
+## Prerequisites
+
+- `Node.js` - v23+
+- `bun`
+- `ElizaOS CLI`
+
+```bash
+  bun install -g @elizaos/cli
+```
+
 ## Getting Started
 
 ```bash
