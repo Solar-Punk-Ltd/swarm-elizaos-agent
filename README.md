@@ -23,8 +23,14 @@ AI agent for Swarm decentralized storage operations. Handles postage stamps, upl
 | `BEE_FEED_PK`                       | string  | **optional** (cannot update feed without it) | The private key of the Swarm Feed to use. If not provided, Swarm Feed functionality will be disabled.                                                      |
 | `AUTO_ASSIGN_STAMP`                 | boolean | **optional**                                 | Whether to automatically assign a postage stamp if none is provided. Default value is: true. Set to false to disable automatic stamp assignment.           |
 | `DEFERRED_UPLOAD_SIZE_THRESHOLD_MB` | number  | **optional**                                 | Size threshold in megabytes for deferred uploads. Files larger than this size will be uploaded asynchronously. Default value is: 5 (MB).                   |
-| `OPENAI_API_KEY`                    | string  | **optional**                                 | API key for OpenAi.                                                                                                                                        |
+| `ANTHROPIC_API_KEY`                 | string  | **optional**                                 | API key for Antrophic. Only set it if Antrophip model is used.                                                                                             |
+| `OPENAI_API_KEY`                    | string  | **required**                                 | API key for OpenAi. When Anthropic is used, it is needed for text embedding fallback. In that scenario, both a valid and random value can be passed in.    |
 | `AVATAR_URL`                        | string  | **optional**                                 | The URL for the agent avatar.                                                                                                                              |
+
+IMPORTANT:
+
+- when you want to use OpenAI, you need to only set `OPENAI_API_KEY` in the `.env` file
+- when you want to use Anthropic you need to set both `ANTHROPIC_API_KEY` and `OPENAI_API_KEY` in this order (`OPENAI_API_KEY` is used as text embedding fallback, random value can be used in this scenario)
 
 ## Prerequisites
 
