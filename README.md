@@ -50,18 +50,14 @@ IMPORTANT:
 ## Getting Started
 
 ```bash
-# Start development immediately
-elizaos dev
+# Start immediately
+bun start
 ```
 
 ## Development
 
 ```bash
-# Start development with hot-reloading (recommended)
-elizaos dev
-
-# OR start without hot-reloading
-elizaos start
+bun start
 # Note: When using 'start', you need to rebuild after changes:
 # bun run build
 
