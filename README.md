@@ -1,6 +1,6 @@
 # Project Starter
 
-AI agent for Swarm decentralized storage operations. Handles postage stamps, uploads/downloads, feeds via Bee node integration.
+ElizaOS AI agent for Swarm decentralized storage operations. Handles postage stamps, uploads/downloads, feeds via Bee node integration.
 
 ## Features
 
