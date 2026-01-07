@@ -1,4 +1,4 @@
-# Project Starter
+# Swarm Agent on ElizaOS
 
 ElizaOS AI agent for Swarm decentralized storage operations. Handles postage stamps, uploads/downloads, feeds via Bee node integration.
 
@@ -30,7 +30,6 @@ ElizaOS AI agent for Swarm decentralized storage operations. Handles postage sta
 | `OPENAI_SMALL_MODEL`                | string  | **optional**                                 | Used for simpler tasks, faster responses. Default: `gpt-4o-mini`.                                                                                          |
 | `OPENAI_LARGE_MODEL`                | string  | **optional**                                 | Used for complex reasoning, better quality. Default: `gpt-4o`.                                                                                             |
 | `OPENAI_EMBEDDING_MODEL`            | string  | **optional**                                 | Defines the embedding model. Default: `text-embedding-3-small`.                                                                                            |
-| `AVATAR_URL`                        | string  | **optional**                                 | The URL for the agent avatar.                                                                                                                              |
 
 IMPORTANT:
 
@@ -52,93 +51,20 @@ If not sure which models to pick and don't want to use the defaults, please chec
 ## Getting Started
 
 ```bash
-# Start immediately
 bun start
+# Note: When using 'start', you need to rebuild after changes:
+# bun run build
 ```
 
 ## Development
 
 ```bash
-bun start
-# Note: When using 'start', you need to rebuild after changes:
-# bun run build
-
-# Test the project
-elizaos test
+# Start local development mode. If having problems with this command use:
+# bun start
+elizaos dev
 ```
 
-## Testing
-
-ElizaOS employs a dual testing strategy:
-
-1. **Component Tests** (`src/__tests__/*.test.ts`)
-   - Run with Bun's native test runner
-   - Fast, isolated tests using mocks
-   - Perfect for TDD and component logic
-
-2. **E2E Tests** (`src/__tests__/e2e/*.e2e.ts`)
-   - Run with ElizaOS custom test runner
-   - Real runtime with actual database (PGLite)
-   - Test complete user scenarios
-
-### Test Structure
-
-```
-src/
-  __tests__/              # All tests live inside src
-    *.test.ts            # Component tests (use Bun test runner)
-    e2e/                 # E2E tests (use ElizaOS test runner)
-      project-starter.e2e.ts  # E2E test suite
-      README.md          # E2E testing documentation
-  index.ts               # Export tests here: tests: [ProjectStarterTestSuite]
-```
-
-### Running Tests
-
-- `elizaos test` - Run all tests (component + e2e)
-- `elizaos test component` - Run only component tests
-- `elizaos test e2e` - Run only E2E tests
-
-### Writing Tests
-
-Component tests use bun:test:
-
-```typescript
-// Unit test example (__tests__/config.test.ts)
-describe("Configuration", () => {
-  it("should load configuration correctly", () => {
-    expect(config.debug).toBeDefined();
-  });
-});
-
-// Integration test example (__tests__/integration.test.ts)
-describe("Integration: Plugin with Character", () => {
-  it("should initialize character with plugins", async () => {
-    // Test interactions between components
-  });
-});
-```
-
-E2E tests use ElizaOS test interface:
-
-```typescript
-// E2E test example (e2e/project.test.ts)
-export class ProjectTestSuite implements TestSuite {
-  name = "project_test_suite";
-  tests = [
-    {
-      name: "project_initialization",
-      fn: async (runtime) => {
-        // Test project in a real runtime
-      },
-    },
-  ];
-}
-
-export default new ProjectTestSuite();
-```
-
-The test utilities in `__tests__/utils/` provide helper functions to simplify writing tests.
+Open the client UI at `http://localhost:3000` and verify interactions with the Swarm Agent. You can use Settings in the UI menu to adjust configuration values, if needed.
 
 ## Configuration
 
