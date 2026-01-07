@@ -30,7 +30,6 @@ ElizaOS AI agent for Swarm decentralized storage operations. Handles postage sta
 | `OPENAI_SMALL_MODEL`                | string  | **optional**                                 | Used for simpler tasks, faster responses. Default: `gpt-4o-mini`.                                                                                          |
 | `OPENAI_LARGE_MODEL`                | string  | **optional**                                 | Used for complex reasoning, better quality. Default: `gpt-4o`.                                                                                             |
 | `OPENAI_EMBEDDING_MODEL`            | string  | **optional**                                 | Defines the embedding model. Default: `text-embedding-3-small`.                                                                                            |
-| `AVATAR_URL`                        | string  | **optional**                                 | The URL for the agent avatar.                                                                                                                              |
 
 IMPORTANT:
 

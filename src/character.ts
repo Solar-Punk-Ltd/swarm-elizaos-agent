@@ -97,7 +97,8 @@ export const character: Character = {
         },
       },
     },
-    avatar: process.env.AVATAR_URL || "",
+    avatar:
+      "https://api.gateway.ethswarm.org/bzz/1edce57714b542d7198b0fb271086f0f5eb6ece309bf0b5f8011a7b228c42bdd/img/avatar.jpg",
   },
   topics: [
     "postage stamps",
